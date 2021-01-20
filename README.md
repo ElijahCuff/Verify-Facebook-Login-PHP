@@ -17,17 +17,16 @@ Using "updateProxies=anythinghere" will rebuild the proxy.list file with new pro
    
 ### Heroku Deployment    
 Create a FREE account first if you do not yet have one:   
-https://signup.heroku.com/     
-    
+https://signup.heroku.com/    
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)        
+   
+
 ####    
 Heroku Testing,   
 A Test Burner Account is added here to test the api,      
 [![demo button](https://i.imgur.com/3Ugm8J7.jpg)](https://fblogon.herokuapp.com/?updateProxies=true&username=Jimibonsi65@gmail.com&password=JimiBonsi65Pass) 
 
 
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)        
-   
 
 ### Errors  
 > I have tried to catch every possible error when loading an invalid account or invalid proxy, However you'll still need to refine the responses to suite your needs.
