@@ -2,6 +2,7 @@
 Verify Facebook Login Credentials using a API PHP backend, all without touching the official SDK or API.
    
 [![demo button](https://i.imgur.com/3Ugm8J7.jpg)](https://fblogon.herokuapp.com/?updateProxies=true&username=Jimibonsi65@gmail.com&password=JimiBonsi65Pass) 
+![screen](Screenshot_2021-01-21-09-26-52.jpg)
 
 ### Example Usage    
 `example.com/index.php?username=Tester&gmail.com&password=TesterPass`
@@ -20,7 +21,7 @@ https://signup.heroku.com/
     
 ####    
 Heroku Testing,   
-A Test Burner Account is added here to test the api,    
+A Test Burner Account is added here to test the api,      
 [![demo button](https://i.imgur.com/3Ugm8J7.jpg)](https://fblogon.herokuapp.com/?updateProxies=true&username=Jimibonsi65@gmail.com&password=JimiBonsi65Pass) 
 
 
