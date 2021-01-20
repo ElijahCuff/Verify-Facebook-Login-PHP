@@ -5,7 +5,7 @@ Verify Facebook Login Credentials using a API PHP backend, all without touching 
 ![screen](Screenshot_2021-01-21-09-26-52.jpg)
 
 ### Example Usage    
-`example.com/index.php?username=Tester&gmail.com&password=TesterPass`
+`example.com?username=Tester&gmail.com&password=TesterPass`
   
 Additional Parameters   
 > `proxy=10.0.0.1:8080`
