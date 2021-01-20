@@ -1,0 +1,6 @@
+{
+  "name": "Verify Book",
+  "description": "PHP powered api to anonymously check Facebook login details.",
+  "repository": "https://github.com/WokeWorld/Verify-Facebook-Login-PHP/",
+  "keywords": ["login example", "verify facebook", "test accounts"]
+}
