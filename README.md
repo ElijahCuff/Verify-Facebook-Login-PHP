@@ -15,7 +15,12 @@ Using "updateProxies=anythinghere" will rebuild the proxy.list file with new pro
 ### Heroku Deployment    
 Create a FREE account first if you do not yet have one:   
 https://signup.heroku.com/     
-  
+    
+####    
+Heroku Testing,   
+'https://fblogon.herokuapp.com/?username=Billgates@gmail.com&password=billyLovesGates32&updateProxies=true`
+
+
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)        
    
