@@ -139,9 +139,12 @@ if (contains("https://www.facebook.com/help/177066345680802",$results))
 }
 
 // CHECK SUCCESSFUL LOGIN
-if (contains("profile picture",$results))
+if (contains("profile picture",$results) | contains("We received your informatio",$results))
 {
-
+if (contains("We received your informatio",$results))
+{
+  $errMsg = "Account Being Reviewed";
+}
 // CLEAR SAVED COOKIES ON LOGON
 file_put_contents($cookieFile, " ");
 // RETURN SUCCESSFUL LOGON
