@@ -142,6 +142,12 @@ if (contains("We received your informatio",$results))
          return "Login Failed,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
 }
 
+// CHECK ACCOUNT REVIEW
+if (contains("We received your informatio",$results))
+ {
+  $errMsg = "Account Being Reviewed";
+  return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
+}
 // CHECK SUCCESSFUL LOGIN
 if (contains("profile picture",$results))
 {
