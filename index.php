@@ -111,7 +111,7 @@ if (contains("login_error",$results) | contains("Error",$results))
        if (contains("Error",$results))
        {
          $errorMsg="Already Logged In";
-         file_put_contents($cookieFile, " ");
+         wipeCookies();
        }
 
  
@@ -123,7 +123,7 @@ if (contains("login_error",$results) | contains("Error",$results))
 if (contains("Your account has been disabled",$results))
        {
          $errorMsg="Account Disabled";
-         file_put_contents($cookieFile, " ");
+         wipeCookies();
          return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
        } 
 
@@ -131,7 +131,7 @@ if (contains("Your account has been disabled",$results))
 if (contains("Add a mobile number",$results))
        {
          $errorMsg="Add Number Page Hit";
-         file_put_contents($cookieFile, " ");
+         wipeCookies();
          return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
        } 
 
@@ -139,7 +139,7 @@ if (contains("Add a mobile number",$results))
 if (contains("https://www.facebook.com/help/177066345680802",$results))
  {
        $errorMsg="Rate Limited";
-         file_put_contents($cookieFile, " ");
+         wipeCookies();
          return "Login Failed,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
 }
 
@@ -147,6 +147,7 @@ if (contains("https://www.facebook.com/help/177066345680802",$results))
 if (contains("We received your informatio",$results))
  {
   $errorMsg = "Account Being Reviewed";
+  wipeCookies();
   return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
 }
 // CHECK SUCCESSFUL LOGIN
@@ -154,7 +155,7 @@ if (contains("profile picture",$results))
 {
 
 // CLEAR SAVED COOKIES ON LOGON
-file_put_contents($cookieFile, " ");
+wipeCookies();
 // RETURN SUCCESSFUL LOGON
 return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")";
 
@@ -173,9 +174,15 @@ return "Login Failed,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPasswor
 }
 
 // REQUIRED FUNCTIONS
+
 function contains($search, $input)
 {
   return (strpos($input,$search) !== false);
+}
+
+function wipeCookies()
+{
+  file_put_contents($cookieFile, " ");
 }
 
 
