@@ -131,20 +131,21 @@ if (contains("Add a mobile number",$results))
          file_put_contents($cookieFile, " ");
          return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
        } 
-if (contains("https://www.facebook.com/help/177066345680802",$results))
+if (contains("https://www.facebook.com/help/177066345680802",$results) | contains("We received your informatio",$results))
  {
+if (contains("We received your informatio",$results))
+{
+  $errMsg = "Account Being Reviewed";
+}
        $errorMsg="Rate Limited";
          file_put_contents($cookieFile, " ");
          return "Login Failed,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
 }
 
 // CHECK SUCCESSFUL LOGIN
-if (contains("profile picture",$results) | contains("We received your informatio",$results))
+if (contains("profile picture",$results))
 {
-if (contains("We received your informatio",$results))
-{
-  $errMsg = "Account Being Reviewed";
-}
+
 // CLEAR SAVED COOKIES ON LOGON
 file_put_contents($cookieFile, " ");
 // RETURN SUCCESSFUL LOGON
