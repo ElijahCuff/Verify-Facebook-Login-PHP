@@ -146,7 +146,7 @@ if (contains("https://www.facebook.com/help/177066345680802",$results))
 // CHECK ACCOUNT REVIEW
 if (contains("We received your informatio",$results))
  {
-  $errMsg = "Account Being Reviewed";
+  $errorMsg = "Account Being Reviewed";
   return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
 }
 // CHECK SUCCESSFUL LOGIN
