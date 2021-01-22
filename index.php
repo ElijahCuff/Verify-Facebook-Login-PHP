@@ -12,6 +12,7 @@ $password = '';
 $user_proxy = randomProxy();
 
 // CHECK DETAILS
+
 if (hasParam('username'))
 {
   $username =  urlDecode($_REQUEST['username']);
@@ -44,11 +45,12 @@ if(hasParam('updateProxies'))
 // Test Login
 echo facebookLogin($username,$password,$user_proxy);
 
-
+$globCookieFile = "";
 // Custom Login Script
 function facebookLogin($username, $password, $proxy = "", $useragent = "", $cookieFile = "cookies.txt", $loops = 0)
 {
-
+global $globCookieFile;
+$globCookieFile = $cookieFile;
 if(strlen($proxy) < 5)
 {
   $proxy = randomProxy();
@@ -182,7 +184,8 @@ function contains($search, $input)
 
 function wipeCookies()
 {
-  file_put_contents($cookieFile, " ");
+  global $globCookieFile;
+  file_put_contents($globCookieFile, " ");
 }
 
 
