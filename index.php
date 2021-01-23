@@ -105,7 +105,7 @@ $results = $page;
 // CHECK ALL LOGIN ERRORS
 if (contains("login_error",$results) | contains("Error",$results))
 {
-  $errorMsg="Username & Password Combination Failed";
+  $errorMsg=$results;
       if (contains("is incorrect",$results))
        {
          $errorMsg="Username Correct, Password Failed";
@@ -120,14 +120,6 @@ if (contains("login_error",$results) | contains("Error",$results))
 
 
 }
-
-// ACCOUNT DISABLED CHECK
-if (contains("Your account has been disabled",$results))
-       {
-         $errorMsg="Account Disabled";
-         wipeCookies();
-         return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
-       } 
 
 // CATCH ADD NUMBER PAGE
 if (contains("Add a mobile number",$results))
