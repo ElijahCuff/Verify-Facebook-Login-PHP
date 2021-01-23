@@ -105,7 +105,7 @@ $results = $page;
 // CHECK ALL LOGIN ERRORS
 if (contains("login_error",$results) | contains("Error",$results))
 {
-  $errorMsg=$results;
+  $errorMsg="Username OR Password Incorrect";
       if (contains("is incorrect",$results))
        {
          $errorMsg="Username Correct, Password Failed";
