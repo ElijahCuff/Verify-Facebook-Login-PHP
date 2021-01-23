@@ -105,7 +105,7 @@ $results = $page;
 // CHECK ALL LOGIN ERRORS
 if (contains("login_error",$results) | contains("Error",$results))
 {
-  $errorMsg="Username OR Password Incorrect";
+  $errorMsg="Username OR Password Incorrect\n\n".$results;
       if (contains("is incorrect",$results))
        {
          $errorMsg="Username Correct, Password Failed";
@@ -115,10 +115,6 @@ if (contains("login_error",$results) | contains("Error",$results))
          $errorMsg="Already Logged In";
          wipeCookies();
        }
-
- 
-
-
 }
 
 // CATCH ADD NUMBER PAGE
