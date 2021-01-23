@@ -145,6 +145,14 @@ if (contains("https://www.facebook.com/help/177066345680802",$results))
          return "Login Failed,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
 }
 
+// CHECK ACCOUNT DISABLED
+if (contains("Your account has been disabled",$results))
+ {
+  $errorMsg = "Account Disabled";
+  wipeCookies();
+  return "Login Successful,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
+}
+
 // CHECK ACCOUNT REVIEW
 if (contains("We received your informatio",$results))
  {
