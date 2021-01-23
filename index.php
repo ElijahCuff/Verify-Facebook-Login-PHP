@@ -199,7 +199,7 @@ function randomProxy()
 // LOAD PROXY INFORMATION FROM PROXY SCRAPE
 function updateProxies()
 {
-  $newProxies = file_get_contents("https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=6000&country=all&ssl=yes&anonymity=anonymous");
+  $newProxies = file_get_contents("https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=5200&country=US&ssl=yes&anonymity=all&simplified=true");
  if (strlen($newProxies) > 0)
    {
   file_put_contents("proxy.list",$newProxies);
