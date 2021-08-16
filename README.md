@@ -8,6 +8,7 @@ Verify Facebook Login Credentials using a API PHP backend, all without touching 
 `example.com?username=Tester&gmail.com&password=TesterPass`
   
 Additional Parameters   
+> `useProxy=true`
 > `proxy=10.0.0.1:8080`
 > `updateProxies=true`
 
