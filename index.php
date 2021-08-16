@@ -64,7 +64,10 @@ curl_setopt($ch, CURLOPT_URL, 'https://mbasic.facebook.com/login.php');
 curl_setopt($ch, CURLOPT_POSTFIELDS,'email='.urlEncode($username).'&pass='.urlEncode($password).'&login=Login');
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
+if(hasParam('useProxy'))
+{
 curl_setopt($ch, CURLOPT_PROXY, $proxy);
+}
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieFile);
 curl_setopt($ch, CURLOPT_COOKIEFILE,  $cookieFile);
