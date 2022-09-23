@@ -172,6 +172,7 @@ if(strlen($errorMsg) < 1)
 
 // RETURN ERRORS & FAILURES
 return "Login Failed,\nProxy : (".$proxy.")\nUsername : (".$username.")\nPassword : (".$password.")\nMessage : ".$errorMsg;
+wipeCookies();
 }
 
 // REQUIRED FUNCTIONS
