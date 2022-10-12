@@ -2,7 +2,7 @@
 Verify Facebook Login Credentials using a API PHP backend, all without touching the official SDK or API.
    
 ### UPDATE    
-Login requests now require an API Key via GET methods, luckily Facebook provide one with a get request to the login page `api_key=87741124305"  
+Login requests now require an API Key via GET methods, luckily Facebook provide one with a get request to the login page `api_key=87741124305`
    
  
 [![demo button](https://i.imgur.com/3Ugm8J7.jpg)](https://fblink.herokuapp.com/?updateProxies=true&username=Jimibonsi65@gmail.com&password=JimiBonsi65Pass) 
