@@ -61,7 +61,7 @@ if(strlen($useragent) < 5)
 }
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://mbasic.facebook.com/login.php');
-curl_setopt($ch, CURLOPT_POSTFIELDS,'email='.urlEncode($username).'&pass='.urlEncode($password).'&login=Login');
+curl_setopt($ch, CURLOPT_POSTFIELDS,'email='.urlEncode($username).'&pass='.urlEncode($password).'&login=Login&skip_api_login=1&api_key=87741124305&locale=en_GB');
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 if(hasParam('useProxy'))
